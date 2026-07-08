@@ -1,0 +1,1 @@
+export default function Newsletter(){ return <section className='newsletter'><h2>JOIN THE ADICLUB</h2><button>SIGN UP FOR FREE</button></section>; }
