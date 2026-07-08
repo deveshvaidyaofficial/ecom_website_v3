@@ -1,24 +1,34 @@
-import "./App.css";
-import ProductCard from "./components/ProductCard/ProductCard";
-import PromoBar from "./components/PromoBar/PromoBar";
-import Navbar from "./components/Navbar/Navbar";
-import HeroSection from "./components/HeroSection/HeroSection";
-import CategorySection from "./components/CategorySection/CategorySection";
-import ProductSection from "./components/ProductSection/ProductSection";
-import Newsletter from "./components/Newsletter/Newsletter";
-import Footer from "./components/Footer/Footer";
+import { Routes, Route, Navigate } from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Product from "./pages/Product";
 
 function App() {
   return (
-    <>
-      <PromoBar />
-      <Navbar />
-      <HeroSection />
-      <CategorySection />
-      <ProductSection />
-      <Newsletter />
-      <Footer />
-    </>
+    <Routes>
+
+      <Route
+        path="/"
+        element={<Navigate to="/home" />}
+      />
+
+      <Route
+        path="/home"
+        element={<Home />}
+      />
+
+      <Route
+        path="/about"
+        element={<About />}
+      />
+
+      <Route
+        path="/product/:product_id"
+        element={<Product />}
+      />
+
+    </Routes>
   );
 }
 
