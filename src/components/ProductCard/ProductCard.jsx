@@ -1,8 +1,15 @@
+import { Link } from "react-router-dom";
+
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
 
   return (
+
+       <Link
+      to={`/product/${product.id}`}
+      className="product-link"
+    >
 
     <div className="product-card">
 
@@ -45,7 +52,7 @@ function ProductCard({ product }) {
 
     </div>
 
-  );
+  </Link> );
 
 }
 
