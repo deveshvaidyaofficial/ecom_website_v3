@@ -2,7 +2,8 @@
   "name": "adidas-eoss-clone",
   "private": true,
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "lucide-react": "^0.542.0",
