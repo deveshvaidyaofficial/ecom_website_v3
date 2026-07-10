@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-function About() {
-  return (
+const About = () => {
+    return (
     <>
       <Navbar />
       <div className="about-page">
@@ -15,7 +15,6 @@ function About() {
       </div>
       <Footer />
     </>
-  );
-}
+  );  }
 
-export default About;
+export default About
