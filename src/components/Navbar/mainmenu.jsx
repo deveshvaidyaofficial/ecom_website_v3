@@ -6,9 +6,9 @@ const data = {
       {
         heading: "FEATURED",
         links: [
-          {name : "New Arrivals", path: "/new-arrivals"},
-          {name : "Sportswear", path: "/sportswear"},
-          {name : "Summer Collection", path: "/summer-collection"},
+          {name : "New Arrivals"},
+          {name : "Sportswear"},
+          {name : "Summer Collection"},
           {name : "About Adidas", path: "/about-adidas"}
         ]
       },
