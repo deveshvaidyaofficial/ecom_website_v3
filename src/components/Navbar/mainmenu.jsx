@@ -6,10 +6,10 @@ const data = {
       {
         heading: "FEATURED",
         links: [
-          "New Arrivals",
-          "Sportswear",
-          "Summer Collection",
-          "About Adidas"
+          {name : "New Arrivals", path: "/new-arrivals"},
+          {name : "Sportswear", path: "/sportswear"},
+          {name : "Summer Collection", path: "/summer-collection"},
+          {name : "About Adidas", path: "/about-adidas"}
         ]
       },
       {
