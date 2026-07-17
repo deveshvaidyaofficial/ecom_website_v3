@@ -45,7 +45,7 @@ const Cart = () => {
             <div className="bag-actions">
 
               <h3>
-                { val==parseInt(item.price * item.quantity) }
+                { item.price * item.quantity }
               </h3>
 
               <div className="qty-box">
