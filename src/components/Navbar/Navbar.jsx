@@ -2,8 +2,7 @@ import './Navbar.css';
 import {useState} from 'react';
 import MegaMenu from './mainmenu';
 import { useSelector } from "react-redux";
-
-export default function Navbar(){const [open,setOpen]=useState(null);
+function Navbar(){const [open,setOpen]=useState(null);
     const items=[['MEN','men'],
     ['WOMEN','women'],
     ['KIDS','kids'],
@@ -37,3 +36,5 @@ return <nav className='navbar'><div className='nav-top'>
     <span>♡</span>
     <span>🛍️</span>
     </div></div>{open&&<MegaMenu type={open}/>}</div></nav>}
+
+export default Navbar;
