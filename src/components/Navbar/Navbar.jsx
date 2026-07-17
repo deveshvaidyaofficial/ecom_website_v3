@@ -24,15 +24,14 @@ function Navbar() {
         <img src='https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg' width='100' /></div><ul className='nav-links'>{items.map(([t, k]) => <li key={t} onMouseEnter={() => k && setOpen(k)}>{t}</li>)}</ul><div className='nav-icons'>
             <span>🔍</span>
             <span>👤</span>
-            <div className="cart-icon">
+            <Link to="/cart" className="cart-icon">
 
                 🛒
 
-                <span className="cart-count">
-                    {cartItems.length}
-                </span>
+                <span>{cartItems.length}</span>
 
-            </div>            <span>🛍️</span>
+            </Link>
+            <span>🛍️</span>
         </div></div>{open && <MegaMenu type={open} />}</div></nav>
 }
 

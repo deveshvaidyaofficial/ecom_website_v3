@@ -2,13 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
     removeFromCart,
-    incrementQuantity,
-    decrementQuantity,
+    increaseQuantity,
+    decreaseQuantity,
 } from "../redux/cartSlice";
 
 /*function Cart() {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); */
 
     const cartItems = useSelector(
         state => state.cart.cartItems
@@ -18,7 +18,8 @@ import {
         (sum, item) =>
             sum + item.price * item.quantity,
         0
-    );*/
+    );
+
     const Cart = () => {
 
     const dispatch = useDispatch();

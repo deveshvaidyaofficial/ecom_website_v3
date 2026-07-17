@@ -1,17 +1,13 @@
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
+import { addToCart } from "../../redux/cartSlice";
 
 function ProductCard({ product }) {
 
   const dispatch = useDispatch();
 
-  <button
-    onClick={() => dispatch(addToCart(product))}
-  >
-    Add to Cart
-  </button>
+
   return (
 
     <Link
@@ -41,6 +37,10 @@ function ProductCard({ product }) {
           <h3>{product.title}</h3>
 
           <p>{product.category}</p>
+
+          <button onClick={() => dispatch(addToCart(product))}>
+            Add to Cart
+          </button>
 
           <span>{product.colors}</span>
 
