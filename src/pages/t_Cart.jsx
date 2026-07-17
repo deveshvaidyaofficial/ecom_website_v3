@@ -45,7 +45,7 @@ const Cart = () => {
             <div className="bag-actions">
 
               <h3>
-                {val == item.price * item.quantity ? val : item.price * item.quantity}
+                {val == item.price * item.quantity }
               </h3>
 
               <div className="qty-box">
