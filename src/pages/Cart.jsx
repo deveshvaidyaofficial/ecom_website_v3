@@ -1,80 +1,124 @@
+import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    removeFromCart,
-    increaseQuantity,
-    decreaseQuantity,
+  increaseQuantity,
+  decreaseQuantity,
+  removeFromCart,
 } from "../redux/cartSlice";
 
 const Cart = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
-    const cartItems = useSelector(
-        state => state.cart.cartItems
-    );
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
-    const total = cartItems.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
-    );
+  return (
+    <div className="shopping-bag">
 
-    return (
-        <div className="cart-page">
+      <div className="bag-left">
 
-            <h1>Shopping Bag</h1>
+        <h1>
+          SHOPPING BAG
+          <span> ({cartItems.length} item)</span>
+        </h1>
 
-            {cartItems.length === 0 ? (
-                <p>Your cart is empty.</p>
-            ) : (
-                <>
-                    {cartItems.map(item => (
-                        <div key={item.id} className="cart-item">
+        {cartItems.map((item) => (
+          <div className="bag-item" key={item.id}>
 
-                            <img src={item.image} width="120" />
+            <img
+              src={item.image}
+              alt={item.title}
+            />
 
-                            <div>
+            <div className="bag-info">
 
-                                <h3>{item.title}</h3>
+              <h3>{item.title}</h3>
 
-                                <p>₹{item.price}</p>
+              <p>₹{item.price}</p>
 
-                                <button
-                                    onClick={() =>
-                                        dispatch(decreaseQuantity(item.id))
-                                    }
-                                >
-                                    -
-                                </button>
+            </div>
 
-                                <span>{item.quantity}</span>
+            <div className="bag-actions">
 
-                                <button
-                                    onClick={() =>
-                                        dispatch(increaseQuantity(item.id))
-                                    }
-                                >
-                                    +
-                                </button>
+              <h3>
+                ₹{item.price * item.quantity}
+              </h3>
 
-                                <button
-                                    onClick={() =>
-                                        dispatch(removeFromCart(item.id))
-                                    }
-                                >
-                                    Remove
-                                </button>
+              <div className="qty-box">
 
-                            </div>
+                <button
+                  onClick={() =>
+                    dispatch(decreaseQuantity(item.id))
+                  }
+                >
+                  −
+                </button>
 
-                        </div>
-                    ))}
+                <span>{item.quantity}</span>
 
-                    <h2>Total ₹{total}</h2>
-                </>
-            )}
+                <button
+                  onClick={() =>
+                    dispatch(increaseQuantity(item.id))
+                  }
+                >
+                  +
+                </button>
 
+              </div>
+
+              <button
+                className="remove-btn"
+                onClick={() =>
+                  dispatch(removeFromCart(item.id))
+                }
+              >
+                Remove
+              </button>
+
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+      <div className="bag-right">
+
+        <h2>ORDER SUMMARY</h2>
+
+        <div className="summary-row">
+          <span>Subtotal</span>
+          <span>₹{subtotal}</span>
         </div>
-    );
+
+        <div className="summary-row">
+          <span>Shipping</span>
+          <span className="green">FREE</span>
+        </div>
+
+        <hr />
+
+        <div className="summary-total">
+          <span>Total</span>
+          <span>₹{subtotal}</span>
+        </div>
+
+        <button className="checkout-btn">
+          PROCEED TO CHECKOUT
+        </button>
+
+        <button className="continue-btn">
+          Continue Shopping
+        </button>
+
+      </div>
+
+    </div>
+  );
 };
 
 export default Cart;
