@@ -13,9 +13,9 @@ function ProductCard({ product }) {
 
     <div className="product-card">
 
-      <button className="heart">
+      <button onclick={() => dispatch(addToCart(product))} className="add_to_cart_button">
 
-        ♡
+        Add to Card
 
       </button>
 

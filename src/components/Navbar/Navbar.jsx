@@ -1,5 +1,30 @@
-import './Navbar.css';import {useState} from 'react';import MegaMenu from './mainmenu';
-export default function Navbar(){const [open,setOpen]=useState(null);const items=[['MEN','men'],['WOMEN','women'],['KIDS','kids'],['SPORTS','sports'],['LIFESTYLE','lifestyle'],['OUTLET','outlet'],['OFFERS','offers']];
+import './Navbar.css';
+import {useState} from 'react';
+import MegaMenu from './mainmenu';
+import { useSelector } from "react-redux";
+
+export default function Navbar(){const [open,setOpen]=useState(null);
+    const items=[['MEN','men'],
+    ['WOMEN','women'],
+    ['KIDS','kids'],
+    ['SPORTS','sports'],
+    ['LIFESTYLE','lifestyle'],
+    ['OUTLET','outlet'],
+    ['OFFERS','offers']];
+    const totalQuantity = useSelector(
+        state => state.cart.totalQuantity
+    );
+
+    return (
+
+        <div>
+
+            🛒 {totalQuantity}
+
+        </div>
+
+    );
+
 return <nav className='navbar'><div className='nav-top'>
     <span>help</span>
     <span>orders and returns</span>

@@ -398,4 +398,5 @@ const data = {
         ]
     },
 }
-export default function MegaMenu({ type }) { const menu = data[type]; if (!menu) return null; return <div className='mega-menu'><div className='mega-content'>{menu.columns.map(c => <div className='column' key={c.heading}><h2>{c.heading}</h2>{c.links.map(l => <p key={l}>{l}</p>)}</div>)}</div></div> }
+export default function MegaMenu({ type }) { const menu = data[type]; 
+    if (!menu) return null; return <div className='mega-menu'><div className='mega-content'>{menu.columns.map(c => <div className='column' key={c.heading}><h2>{c.heading}</h2>{c.links.map(l => <p key={l}>{l}</p>)}</div>)}</div></div> }
