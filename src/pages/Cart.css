@@ -1,0 +1,249 @@
+.shopping-bag{
+
+    max-width:1400px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+    padding:20px;
+
+}
+
+.bag-left h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+
+}
+
+.bag-left span{
+
+    font-size:22px;
+
+    color:#777;
+
+}
+
+.bag-item{
+
+    display:grid;
+
+    grid-template-columns:150px 1fr 220px;
+
+    gap:25px;
+
+    padding:25px 0;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.bag-item img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+}
+
+.bag-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.bag-info h3{
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.bag-info p{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.bag-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    gap:20px;
+
+}
+
+.qty-box{
+
+    display:flex;
+
+    border:1px solid #ddd;
+
+}
+
+.qty-box button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+.qty-box span{
+
+    width:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.remove-btn{
+
+    border:none;
+
+    background:none;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+}
+
+.bag-right{
+
+    border:1px solid #ddd;
+
+    padding:35px;
+
+    height:fit-content;
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.bag-right h2{
+
+    margin-bottom:35px;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+.summary-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    margin:30px 0;
+
+}
+
+.green{
+
+    color:#1b9b2d;
+
+    font-weight:bold;
+
+}
+
+.checkout-btn{
+
+    width:100%;
+
+    background:black;
+
+    color:white;
+
+    padding:18px;
+
+    border:none;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    margin-bottom:20px;
+
+}
+
+.checkout-btn:hover{
+
+    background:#222;
+
+}
+
+.continue-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    background:white;
+
+    border:1px solid black;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+}
+
+.continue-btn:hover{
+
+    background:#f5f5f5;
+
+}
