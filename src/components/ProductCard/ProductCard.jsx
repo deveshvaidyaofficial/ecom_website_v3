@@ -1,58 +1,60 @@
 import { Link } from "react-router-dom";
-
 import "./ProductCard.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 function ProductCard({ product }) {
 
+  const dispatch = useDispatch();
+
+  <button
+    onClick={() => dispatch(addToCart(product))}
+  >
+    Add to Cart
+  </button>
   return (
 
-       <Link
+    <Link
       to={`/product/${product.id}`}
       className="product-link"
     >
 
-    <div className="product-card">
+      <div className="product-card">
 
-      <button onclick={() => dispatch(addToCart(product))} className="add_to_cart_button">
+        <div className="product-image">
 
-        Add to Card
-
-      </button>
-
-      <div className="product-image">
-
-        <img
-          src={product.image}
-          alt={product.title}
-        />
-
-      </div>
-
-      <div className="product-details">
-
-        <div className="price">
-
-          {product.price}
+          <img
+            src={product.image}
+            alt={product.title}
+          />
 
         </div>
 
-        <h3>{product.title}</h3>
+        <div className="product-details">
 
-        <p>{product.category}</p>
+          <div className="price">
 
-        <span>{product.colors}</span>
+            {product.price}
 
-        <small>
+          </div>
 
-          Buy 2 get 50% off
+          <h3>{product.title}</h3>
 
-        </small>
+          <p>{product.category}</p>
+
+          <span>{product.colors}</span>
+
+          <small>
+
+            Buy 2 get 50% off
+
+          </small>
+
+        </div>
 
       </div>
 
-    </div>
-
-  </Link> );
+    </Link>);
 
 }
 
