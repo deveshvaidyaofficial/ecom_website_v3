@@ -38,14 +38,14 @@ const Cart = () => {
 
               <h3>{item.title}</h3>
 
-              <p>₹{item.price}</p>
+              <p>{item.price}</p>
 
             </div>
 
             <div className="bag-actions">
 
               <h3>
-                ₹{item.price * item.quantity}
+                {val == item.price * item.quantity ? val : item.price * item.quantity}
               </h3>
 
               <div className="qty-box">
@@ -92,7 +92,7 @@ const Cart = () => {
 
         <div className="summary-row">
           <span>Subtotal</span>
-          <span>₹{subtotal}</span>
+          <span>{subtotal}</span>
         </div>
 
         <div className="summary-row">
@@ -104,7 +104,7 @@ const Cart = () => {
 
         <div className="summary-total">
           <span>Total</span>
-          <span>₹{subtotal}</span>
+          <span>{subtotal}</span>
         </div>
 
         <button className="checkout-btn">
