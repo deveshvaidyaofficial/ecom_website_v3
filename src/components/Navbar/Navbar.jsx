@@ -2,6 +2,7 @@ import './Navbar.css';
 import { useState } from 'react';
 import MegaMenu from './mainmenu';
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 function Navbar() {
     const [open, setOpen] = useState(null);
     const items = [['MEN', 'men'],

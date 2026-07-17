@@ -38,7 +38,13 @@ function ProductCard({ product }) {
 
           <p>{product.category}</p>
 
-          <button onClick={() => dispatch(addToCart(product))}>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              dispatch(addToCart(product));
+            }}
+          >
             Add to Cart
           </button>
 
